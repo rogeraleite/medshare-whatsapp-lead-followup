@@ -421,9 +421,16 @@ entrypoint = "./functions/process-due-messages/index.ts"
 enabled = true
 verify_jwt = true
 import_map = "./functions/whatsapp-webhook/deno.json"
-# Uncomment to specify a custom file path to the entrypoint.
-# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
 entrypoint = "./functions/whatsapp-webhook/index.ts"
-# Specifies static files to be bundled with the function. Supports glob patterns.
-# For example, if you want to serve static HTML pages in your function:
-# static_files = [ "./functions/whatsapp-webhook/*.html" ]
+
+[functions.check-post-published]
+enabled = true
+verify_jwt = false
+import_map = "./functions/check-post-published/deno.json"
+entrypoint = "./functions/check-post-published/index.ts"
+
+[functions.aprovar-posts]
+enabled = true
+verify_jwt = false
+import_map = "./functions/aprovar-posts/deno.json"
+entrypoint = "./functions/aprovar-posts/index.ts"
